@@ -7,11 +7,25 @@ const SignUp = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        
+        const user = {email, password};
 
         createUser(email, password)
         .then(res => {
             console.log(res.user);
+
+            fetch('https://brandshop-server-r90rvqzwe-rakibul-hasans-projects-d7482df6.vercel.app/user', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            })
         })
         .catch(err => {
             console.error(err)
