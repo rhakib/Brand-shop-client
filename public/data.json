@@ -1,0 +1,33 @@
+[
+    {
+        "_id": 1,
+        "image": "https://i.ibb.co/CvgHDrh/brand.jpg",
+        "brand": "Apple"
+    },
+    {
+        "_id": 2,
+        "image": "https://i.ibb.co/qJycQbS/Brand.jpg",
+        "brand": "OnePlus"
+    },
+    {
+        "_id": 3,
+        "image": "https://i.ibb.co/CvgHDrh/brand.jpg",
+        "brand": "Samsung"
+    },
+    {
+        "_id": 4,
+        "image": "https://i.ibb.co/qJycQbS/Brand.jpg",
+        "brand": "Xiaomi"
+    }
+    ,
+    {
+        "_id": 5,
+        "image": "https://i.ibb.co/CvgHDrh/brand.jpg",
+        "brand": "DJI"
+    },
+    {
+        "_id": 6,
+        "image": "https://i.ibb.co/qJycQbS/Brand.jpg",
+        "brand": "GoPro"
+    }
+]

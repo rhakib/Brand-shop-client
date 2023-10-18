@@ -14,7 +14,7 @@ const SignUp = () => {
         .then(res => {
             console.log(res.user);
 
-            fetch('https://brandshop-server-r90rvqzwe-rakibul-hasans-projects-d7482df6.vercel.app/user', {
+            fetch('http://localhost:5000/user', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
