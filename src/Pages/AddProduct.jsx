@@ -108,7 +108,7 @@ const AddProduct = () => {
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add Product" className="btn font-bold border-0 hover:bg-white bg-purple-500 btn-block" />
+                <input type="submit" value="Add Product" className="btn font-bold border-0 hover:bg-purple-700 text-white bg-purple-500 btn-block" />
             </form>
         </div>
     );

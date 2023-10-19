@@ -1,64 +1,88 @@
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../Provider/useAuth';
+import toast from 'react-hot-toast';
+import SocialLogin from '../Components/SocialLogin';
+
 
 const SignUp = () => {
-    const {createUser} = useAuth()
-    const handleSignUp = e =>{
+
+    const { createUser, updateUserProfile } = useAuth()
+    const navigate = useNavigate()
+    const handleRegister = e => {
         e.preventDefault()
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        
-        const user = {email, password};
+        const form = new FormData(e.currentTarget)
 
-        createUser(email, password)
-        .then(res => {
-            console.log(res.user);
+        const name = form.get('name');
+        const img = form.get('image');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email, name, img, password);
 
-            fetch('http://localhost:5000/user', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(user)
+        if (password.length < 6) {
+            toast.error('Password length should be at least 6 character')
+            return;
+        }
+        else if (!/^(?=.*[A-Z])(?=.*[^a-zA-Z\d])/.test(password)) {
+            toast.error('please incldue an uppercase, a lowercase and a special character')
+            return;
+        }
+
+
+        createUser(email, password, img)
+            .then(res => {
+                updateUserProfile(img, name)
+                    .then(res => {
+                        toast.success('Successfuly registered')
+                        navigate('/')
+                        location.reload(true)
+                    })
+
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-
+            .catch(err => {
+                toast.error(err.message)
             })
-        })
-        .catch(err => {
-            console.error(err)
-        })
+
 
     }
+
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero min-h-screen bg-purple-200">
+            <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Sign Up now!</h1>
+                    <h1 className="text-5xl text-black font-bold">Register now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleSignUp} className="card-body">
+                <div className="card flex-shrink-0 w-[350px] md:w-[400px]  shadow-2xl mt-6 glass  bg-purple-400">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-black font-semibold text-xl">Name</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            <input type="text" name='name' placeholder="Your name" className="input input-bordered " />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-black font-semibold text-xl">Image</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="text" name='image' placeholder="Image URL" className="input  input-bordered" />
+                        </div>
+                        <div className="form-control">
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <span className="label-text text-black font-semibold text-xl">Email</span>
                             </label>
+                            <input type="email" name='email' placeholder="Email" className="input   input-bordered" required/>
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text text-black font-semibold text-xl">Password</span>
+                            </label>
+                            <input type="password" name='password' placeholder="Password" className="input  input-bordered" required/>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Sign Up</button>
+                            <button type='submit' className="btn text-white text-lg hover:bg-purple-700 bg-purple-600 ">Register</button>
                         </div>
+                    <p className='ml-14 md:ml-12 text-black my-2'>Already have an account? <Link to='/login' className='text-purple-600 hover:underline text-lg font-semibold '>Login</Link></p>
                     </form>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

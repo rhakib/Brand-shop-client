@@ -1,51 +1,67 @@
 import React from 'react';
 import useAuth from '../Provider/useAuth';
+import { Link, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import SocialLogin from '../Components/SocialLogin';
+
 
 const Login = () => {
-    const {signInUser} = useAuth()
-    const handleSignIn = e =>{
+
+    const { signInUser } = useAuth()
+    const navigate = useNavigate()
+
+    const handleLogin = (e) => {
+
         e.preventDefault()
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
+        const form = new FormData(e.currentTarget)
+
+        const email = form.get('email');
+        const password = form.get('password');
         console.log(email, password);
 
         signInUser(email, password)
-        .then(res => {
-            console.log(res.user);
-        })
-        .catch(err => {
-            console.error(err)
-        })
+            .then(res => {
+                console.log(res)
+                toast.success('Successfuly logged in')
+                location.reload(true)
+                navigate('/')
 
+
+            })
+            .catch(err => {
+                toast.error('please provide a valid email and password')
+            })
     }
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero min-h-screen bg-purple-200" >
+            <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
+                    <h1 className="text-5xl text-black font-bold">Login now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleSignIn} className="card-body">
+                <div className="card flex-shrink-0 w-[350px] md:w-[400px]  shadow-2xl mt-6 glass  bg-purple-400">
+                    <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-black font-semibold text-xl">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="Email" className="input  input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text  text-black font-semibold text-xl">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="Password" className="input  input-bordered" />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a href="#" className="label-text-alt text-black link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Sign In</button>
+                            <button type='submit' className="btn  text-white text-lg hover:bg-purple-700 bg-purple-600">Login</button>
                         </div>
+                        <p className='ml-14 md:ml-12 text-black my-2'>Don&#39;t have an account? <Link to='/signup' className='text-lg hover:underline font-semibold text-purple-600 '>Register</Link></p>
+
                     </form>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>
