@@ -30,7 +30,8 @@ const AuthProvider = ({ children }) => {
     const authInfo = {
         createUser,
         signInUser,
-        user
+        user,
+        loading
     }
     console.log(user);
     return (

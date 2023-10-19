@@ -1,11 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-const ProductsCard = ({ product }) => {
-    const {_id, image, name, brand, category, price, description, rating } = product;
-    
+const Cart = ({singleCart, deleteCart, setDeleteCart}) => {
+    const {_id, image, name, brand, category, price, description, rating } = singleCart;
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "But, no probelm. You can added it again!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/cart/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                `${name} has been deleted.`,
+                                'success'
+                            )
+                            const remaining = deleteCart.filter(cart => cart._id !== _id)
+                            setDeleteCart(remaining)
+                            console.log(remaining);
+                        }
+                    })
+            }
+        })
+    }
+
+
+
     return (
-
         <div className="w-full h-5/5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-200 ">
             <a href="#">
                 <img className="h-3/5 w-full rounded-t-lg" src={image} alt="product image" />
@@ -36,13 +72,12 @@ const ProductsCard = ({ product }) => {
                 </div>
                 <div className="flex items-center gap-8">
                     <span className="text-3xl font-bold text-gray-900 ">$599</span>
-                    <Link to={`/productDetail/${name}`} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Details</Link>
-                    <a href="#" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</a>
+                    <button onClick={()=> handleDelete(_id)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Remove from Cart</button>
+                    
                 </div>
             </div>
         </div>
-
     );
 };
 
-export default ProductsCard;
+export default Cart;
