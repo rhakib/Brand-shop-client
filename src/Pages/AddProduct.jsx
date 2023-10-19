@@ -60,10 +60,12 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <select name="brand" placeholder="Brand Name" className="w-full input input-bordered">
-                                <option value="Apple">Volvo</option>
-                                <option value="OnePlus">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
+                                <option value="Apple">Apple</option>
+                                <option value="OnePlus">OnePlus</option>
+                                <option value="Xiaomi">Xiaomi</option>
+                                <option value="Samsung">Samsung</option>
+                                <option value="DJI">DJI</option>
+                                <option value="GoPro">GoPro</option>
                             </select>
                         </label>
                     </div>

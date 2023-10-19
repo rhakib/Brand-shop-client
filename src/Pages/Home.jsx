@@ -15,8 +15,9 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h2 className='text-4xl text-center my-10 font-semibold'>Shop By brand</h2>
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 mt-8 gap-6'>
+            <h2 className='text-4xl text-center mt-10 font-semibold'>Shop By brand</h2>
+            <p className='text-center mt-4 text-lg'>Elevate Your Digital Lifestyle with the Latest in Tech Excellence.</p>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 mt-12 gap-6'>
                 {
                     brands.map(brandName => <Brands key={brandName._id} brandName={brandName}></Brands>)
                 }
