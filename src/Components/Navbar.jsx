@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { Link, NavLink } from 'react-router-dom';
 import { FaSignOutAlt, FaUserCircle } from 'react-icons/fa'
 import useAuth from '../Provider/useAuth';
+import './nav.css'
 
 const Navbar = () => {
     const { user, logOut, } = useAuth()
