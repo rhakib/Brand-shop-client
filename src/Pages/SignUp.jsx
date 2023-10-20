@@ -80,7 +80,7 @@ const SignUp = () => {
                         <div className="form-control mt-6">
                             <button type='submit' className="btn text-white text-lg hover:bg-purple-700 bg-purple-600 ">Register</button>
                         </div>
-                    <p className='ml-14 md:ml-12 text-black my-2'>Already have an account? <Link to='/login' className='text-purple-600 hover:underline text-lg font-semibold '>Login</Link></p>
+                    <p className='ml-14 md:ml-12 text-black my-2'>Already have an account? <Link to='/login' className='text-purple-600 hover: text-lg font-semibold '>Login</Link></p>
                     </form>
                     <SocialLogin></SocialLogin>
                 </div>
