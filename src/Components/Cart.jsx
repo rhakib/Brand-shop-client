@@ -9,7 +9,7 @@ const Cart = ({ singleCart, cart, setCart }) => {
         console.log(_id);
         Swal.fire({
             title: 'Are you sure?',
-            text: "But, no probelm. You can added it again!",
+            text: "But, no probelm. You can buy it again!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
