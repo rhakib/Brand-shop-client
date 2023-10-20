@@ -7,7 +7,7 @@ const Brands = ({ brandName }) => {
 
     return (
         <Link to={`/products/${brand}`}>
-            <div className="max-w-sm h-[500px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 ">
+            <div className="max-w-sm h-[450px] md:h-[500px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 ">
                 <img className="rounded-t-lg h-2/3 w-full" src={image} alt="" />
                 <div className="flex flex-col justify-center items-center gap-6 ">
                     <h5 className="mt-6 text-4xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{brand}</h5>

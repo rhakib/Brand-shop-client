@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import useAuth from '../Provider/useAuth';
+import Swal from 'sweetalert2';
 
 const ProductDetail = () => {
     const { id } = useParams()
@@ -20,6 +21,12 @@ const ProductDetail = () => {
     const myCart = { image, name, brand, category, price, description, rating, email:email }
 
     const handleCart = () => {
+
+        Swal.fire(
+            'Added!',
+            `${name} added to your cart.`,
+            'success'
+        )
 
         fetch('http://localhost:5000/cart', {
             method: 'POST',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const UpdateProducts = () => {
 
@@ -33,7 +34,11 @@ const UpdateProducts = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    toast.success('updated successfully')
+                    Swal.fire(
+                        'Updated!',
+                        `${name} has been updated successfully.`,
+                        'success'
+                    )
                     
                 }
             })

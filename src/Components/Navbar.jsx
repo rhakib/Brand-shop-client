@@ -45,7 +45,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to={'/'}><img className='w-32 h-16' src={logo} alt="" /></Link>
+                    <Link to={'/'}><img className='w-32 ml-44 md:ml-[570px] lg:ml-0 h-16' src={logo} alt="" /></Link>
                 </div>
                 <div className="navbar-end hidden text-black lg:flex">
                     <ul className="flex font-semibold items-center gap-7">

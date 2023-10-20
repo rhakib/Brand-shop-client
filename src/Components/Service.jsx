@@ -51,7 +51,7 @@ const Service = () => {
                             </div>
                         </div>
 
-                        <img src={headphone} alt="" className="w-1/2 md:ml-40 lg:ml-0 lg:w-full  object-contain text-center" />
+                        <img src={headphone} alt="" className="md:w-1/2 md:ml-40 lg:ml-0 lg:w-full  object-contain text-center" />
 
                         <div className="sm:flex gap-4 lg:block space-y-6 sm:space-y-0 lg:space-y-6">
                             <div className="flex items-center gap-1">
