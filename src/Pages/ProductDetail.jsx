@@ -36,7 +36,7 @@ const ProductDetail = () => {
 
 
     return (
-        <div className="bg-white border border-gray-200 rounded-lg  grid md:grid-cols-2 gap-16">
+        <div className="bg-white border max-w-7xl mx-auto border-gray-200 rounded-lg  grid md:grid-cols-2 gap-16">
 
             <div>
                 <img className="p-4 md:w-full rounded-[40px]" src={image} alt="product image" />
@@ -68,7 +68,7 @@ const ProductDetail = () => {
                 </div>
                 <p className='md:w-[550px]'>{description}</p>
                 <div className="flex gap-8 items-center mt-6 ">
-                    <span className="text-3xl font-bold text-gray-900 ">$249</span>
+                    <span className="text-3xl font-bold text-gray-900 ">${price}</span>
                     <button onClick={handleCart} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to Cart</button>
 
                 </div>

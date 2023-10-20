@@ -23,7 +23,7 @@ const SignUp = () => {
             return;
         }
         else if (!/^(?=.*[A-Z])(?=.*[^a-zA-Z\d])/.test(password)) {
-            toast.error('please incldue an uppercase, a lowercase and a special character')
+            toast.error('please incldue an uppercase and a special character')
             return;
         }
 

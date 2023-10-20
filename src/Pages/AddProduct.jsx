@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const AddProduct = () => {
 
@@ -25,6 +26,12 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                form.reset()
+                Swal.fire(
+                    'Added!',
+                    `Your product has been added.`,
+                    'success'
+                )
             })
     }
 
@@ -48,7 +55,7 @@ const AddProduct = () => {
                             <span className="label-text text-xl font-semibold">Product Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="name" placeholder="Product Name" className="w-full input input-bordered" />
+                            <input type="text" name="name" placeholder="Product Name" required className="w-full input input-bordered" />
                         </label>
                     </div>
                 </div>
@@ -62,8 +69,8 @@ const AddProduct = () => {
                             <select name="brand" placeholder="Brand Name" className="w-full input input-bordered">
                                 <option value="Apple">Apple</option>
                                 <option value="OnePlus">OnePlus</option>
-                                <option value="Xiaomi">Xiaomi</option>
                                 <option value="Samsung">Samsung</option>
+                                <option value="Xiaomi">Xiaomi</option>
                                 <option value="DJI">DJI</option>
                                 <option value="GoPro">GoPro</option>
                             </select>

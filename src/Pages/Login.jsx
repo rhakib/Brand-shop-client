@@ -23,7 +23,6 @@ const Login = () => {
             .then(res => {
                 console.log(res)
                 toast.success('Successfuly logged in')
-                location.reload(true)
                 navigate('/')
 
 

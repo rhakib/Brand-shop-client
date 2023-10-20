@@ -2,12 +2,14 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import { Toaster } from 'react-hot-toast';
+import Footer from '../Components/Footer';
 
 const Root = () => {
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div>
             <Navbar></Navbar>
             <Outlet></Outlet>
+            <Footer></Footer>
             <Toaster/>
         </div>
     );
