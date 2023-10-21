@@ -1,7 +1,7 @@
 **Website Name:** Techify <br>
 **Website link:** https://brandshop-client.web.app/
 
-**Features**
+**Features:**
 
 1. **Creating Account:** User will be able to create an account in our store.
 2. **Purchase Products:** User can purchase product from our website by clicking add to cart button.

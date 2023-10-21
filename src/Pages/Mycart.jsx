@@ -23,7 +23,7 @@ const Mycart = () => {
             <h2 className='text-center text-3xl mt-4'>Your selected products</h2>
             <hr className='my-6 max-w-7xl mx-auto' />
             {
-                cart.length !== 0 ? <><div className='grid md:grid-cols-3 mt-8 max-w-7xl mx-auto'>
+                cart.length !== 0 ? <><div className='grid md:grid-cols-3 px-5  mt-8 max-w-7xl mx-auto'>
                 {
                     cart.map(singleCart => <Cart key={singleCart._id} singleCart={singleCart} cart={cart} setCart={setCart}></Cart>)
                 }

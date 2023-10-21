@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai'
 import { BiLogoFacebookCircle } from 'react-icons/bi'
-import logo from '/logo.png'
+import logo from '/techify.png'
 
 const Footer = () => {
     return (
