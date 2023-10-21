@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AiOutlineDelete } from 'react-icons/ai'
 
 const Cart = ({ singleCart, cart, setCart }) => {
     const { _id, image, name, brand, category, price, description, rating } = singleCart;
@@ -18,7 +18,7 @@ const Cart = ({ singleCart, cart, setCart }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cart/${_id}`, {
+                fetch(`https://brandshop-server.vercel.app/cart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -26,8 +26,8 @@ const Cart = ({ singleCart, cart, setCart }) => {
                         console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire(
-                                'Deleted!',
-                                `${name} has been deleted.`,
+                                'Removed!',
+                                `${name} has been removed from your cart.`,
                                 'success'
                             )
                             const remaining = cart.filter(cart => cart._id !== _id)
@@ -72,9 +72,9 @@ const Cart = ({ singleCart, cart, setCart }) => {
                         </svg>
                         <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{rating}</span>
                     </div>
-                    <div className="flex items-center gap-8">
+                    <div className="flex items-center gap-12">
                         <span className="text-3xl font-bold text-gray-900 ">${price}</span>
-                        <button onClick={() => handleDelete(_id)} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Remove from Cart</button>
+                        <button onClick={() => handleDelete(_id)} className="text-white flex gap-1 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><AiOutlineDelete className='text-2xl'></AiOutlineDelete>Remove from Cart</button>
 
                     </div>
                 </div>

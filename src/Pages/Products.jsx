@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import ProductsCard from './ProductsCard';
-import TestSlider from './TestSlider';
+import Slider from './Slider';
 
 const Products = () => {
     const { id } = useParams()
@@ -29,7 +29,7 @@ const Products = () => {
         <div>
             <div className='text-4xl text-center'>
                 {
-                    brands?.map(brand => <TestSlider key={brand._id} brand={brand}></TestSlider>)
+                    brands?.map(brand => <Slider key={brand._id} brand={brand}></Slider>)
                 }
 
             </div>
@@ -46,7 +46,7 @@ const Products = () => {
                             </div>
                              </> : (
                             <div>
-                                <div className='flex flex-col mt-6 items-center justify-center space-y-6'>
+                                <div className='flex py-12 flex-col mt-6 items-center justify-center space-y-6'>
                                     <h2 className='font-bold text-4xl'>No products available</h2>
                                     <p className='text-lg'>Explore our store to buy products</p>
                                     <Link to='/'><button className='btn hover:bg-purple-800 bg-purple-600 text-white text-lg'>Go to store</button></Link>

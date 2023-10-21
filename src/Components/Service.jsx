@@ -1,34 +1,16 @@
 import React from 'react';
 import headphone from '/p2.jpg'
-import { BsFillPlayFill } from 'react-icons/bs'
+import { BsFillPlayFill, BsHandbag } from 'react-icons/bs'
+import { TbTruckDelivery } from 'react-icons/tb'
+import { GoShieldCheck } from 'react-icons/go'
+
 import { Link } from 'react-router-dom';
 
 const Service = () => {
     return (
 
         <>
-            <div className='bg-base-300'>
-                <section className="p-10 max-w-7xl mx-auto sm:p-20 text-center  mt-8 rounded-lg">
-                    <h2 className="text-2xl md:text-4xl font-bold">Experience Streamlined Shopping with Techify</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-10 md:mt-28">
-                        <div className="">
-                            <i className="ri-truck-line text-5xl"></i>
-                            <h3 className="font-semibold text-2xl my-3">Free Delivery</h3>
-                            <p className="text-gray-500">Unlock the joy of convenience with free delivery - where your happiness arrives at your doorstep without the cost of a journey.</p>
-                        </div>
-                        <div className="">
-                            <i className="ri-shopping-bag-line text-5xl"></i>
-                            <h3 className="font-semibold text-2xl my-3">Self Pickup</h3>
-                            <p className="text-gray-500">Self pickup: where you take control of convenience, making every step to your destination a choice, not a chance.</p>
-                        </div>
-                        <div className="">
-                            <i className="ri-shield-check-line text-5xl"></i>
-                            <h3 className="font-semibold text-2xl my-3">Warranty</h3>
-                            <p className="text-gray-500">Warranty: Our promise of peace of mind, because your trust in quality deserves a safeguard.</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
+            
 
             <div className='bg-base-300 mt-12'>
                 <section className="p-10 max-w-7xl mx-auto sm:p-20 rounded-lg">
@@ -73,6 +55,29 @@ const Service = () => {
                     <div className='flex justify-center'>
                         <Link to='/'><button className='btn mt-4 hover:bg-purple-800 bg-purple-500 text-white text-lg'>Buy Now</button></Link>
 
+                    </div>
+                </section>
+            </div>
+
+            <div className='bg-base-300 mt-12'>
+                <section className="p-10 max-w-7xl mx-auto sm:p-20 text-center  mt-8 rounded-lg">
+                    <h2 className="text-2xl md:text-4xl font-bold">Experience Streamlined Shopping with Techify</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 mt-10 md:mt-28">
+                        <div className="flex flex-col items-center">                           
+                            <TbTruckDelivery className='text-5xl'></TbTruckDelivery>
+                            <h3 className="font-semibold text-2xl my-3">Free Delivery</h3>
+                            <p className="text-gray-500">Unlock the joy of convenience with free delivery - where your happiness arrives at your doorstep without the cost of a journey.</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <BsHandbag className='text-5xl'></BsHandbag>
+                            <h3 className="font-semibold text-2xl my-3">Self Pickup</h3>
+                            <p className="text-gray-500">Self pickup: where you take control of convenience, making every step to your destination a choice, not a chance.</p>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <GoShieldCheck className='text-5xl'></GoShieldCheck>
+                            <h3 className="font-semibold text-2xl my-3">Warranty</h3>
+                            <p className="text-gray-500">Warranty: Our promise of peace of mind, because your trust in quality deserves a safeguard.</p>
+                        </div>
                     </div>
                 </section>
             </div>

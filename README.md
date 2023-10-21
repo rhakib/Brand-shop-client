@@ -1,8 +1,11 @@
-# React + Vite
+**Website Name:** Techify
+**Website link:** https://brandshop-client.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Features**
 
-Currently, two official plugins are available:
+1. **Creating Account:** User will be able to create an account in our store.
+2. **Purchase Products:** User can purchase product from our website by clicking add to cart button.
+3. **Removing from Cart:** User will be able to remove the added products from his/her cart.
+4. **Adding Products:** An admin of this website will be able to add products through a form in the add product page.
+5. **Updating Products:** An admin of this website can update the product information using update product form.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

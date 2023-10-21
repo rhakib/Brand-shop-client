@@ -8,15 +8,16 @@ const Home = () => {
     const [brands, setBrands] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/brands')
+        fetch('https://brandshop-server.vercel.app/brands')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])
-    console.log(brands);
+
     return (
         <div>
             <Banner></Banner>
             <h2 className='text-4xl text-center mt-10 font-semibold'>Shop By brand</h2>
+            <hr className='my-4 w-36 mx-auto border-2 border-purple-500' />
             <p className='text-center mt-4 text-lg'>Elevate Your Digital Lifestyle with the Latest in Tech Excellence.</p>
             <div className='grid md:grid-cols-2 max-w-7xl mx-auto bg-slate-200 p-8 rounded-lg lg:grid-cols-3 mt-12 gap-6'>
                 {

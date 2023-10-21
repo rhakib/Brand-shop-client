@@ -23,7 +23,7 @@ const UpdateProducts = () => {
 
         const updatedProduct = { image, name, brand, category, price, description, rating };
 
-        fetch(`http://localhost:5000/addproduct/${_id}`, {
+        fetch(`https://brandshop-server.vercel.app/addproduct/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -39,7 +39,7 @@ const UpdateProducts = () => {
                         `${name} has been updated successfully.`,
                         'success'
                     )
-                    
+
                 }
             })
     }

@@ -6,12 +6,12 @@ import logo from '/logo.png'
 
 const Footer = () => {
     return (
-        <footer className="footer  p-10 bg-base-300 text-base-content mt-12">
+        <footer className="footer max-w-7xl mx-auto  p-10 text-base-content mt-12">
             <aside>
                 <img className='w-32 h-16' src={logo} alt="" />
                 <p className='text-base'>The tech excellence</p>
             </aside>
-            <div className='grid md:gap-40 grid-cols-2'>
+            <div className='grid md:gap-4 lg:gap-28 grid-cols-2'>
                 <nav className='flex flex-col space-y-2'>
                     <header className="footer-title">Brands</header>
                     <Link className="link link-hover">Apple</Link>

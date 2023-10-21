@@ -36,22 +36,22 @@ const router = createBrowserRouter([
             {
                 path: '/products/:id',
                 element: <Products></Products>,
-                loader: () => fetch('http://localhost:5000/addproduct')
+                loader: () => fetch('https://brandshop-server.vercel.app/addproduct')
             },
             {
                 path: '/productdetail/:id',
                 element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/addproduct')
+                loader: () => fetch('https://brandshop-server.vercel.app/addproduct')
             },
             {
                 path: '/mycart',
                 element: <PrivateRoute><Mycart></Mycart></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/cart')
+                loader: () => fetch('https://brandshop-server.vercel.app/cart')
             },
             {
                 path: '/products/updateproducts/:id',
                 element: <PrivateRoute><UpdateProducts></UpdateProducts></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/addproduct/${params.id}`)
+                loader: ({ params }) => fetch(`https://brandshop-server.vercel.app/addproduct/${params.id}`)
             }
         ]
     },
