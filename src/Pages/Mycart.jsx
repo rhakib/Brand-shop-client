@@ -30,8 +30,8 @@ const Mycart = () => {
             </div></> : 
             <>
                <div>
-                                <div className='flex flex-col mt-6 items-center justify-center space-y-6'>
-                                    <h2 className='font-bold text-4xl'>You didn't added any products</h2>
+                                <div className='flex flex-col mt-6 py-40 items-center justify-center space-y-6'>
+                                    <h2 className='font-bold text-3xl md:text-4xl'>You didn't add any products</h2>
                                     <p className='text-lg'>Explore our store to buy products</p>
                                     <Link to='/'><button className='btn hover:bg-purple-800 bg-purple-600 text-white text-lg'>Go to store</button></Link>
                                 </div>

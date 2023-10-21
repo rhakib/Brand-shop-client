@@ -43,7 +43,7 @@ const ProductDetail = () => {
 
 
     return (
-        <div className="bg-white border max-w-7xl mx-auto border-gray-200 rounded-lg  grid md:grid-cols-2 gap-16">
+        <div className="bg-white mt-8 border max-w-7xl mx-auto border-gray-200 rounded-lg  grid md:grid-cols-2 gap-16">
 
             <div>
                 <img className="p-4 py-6 md:w-full rounded-[40px]" src={image} alt="product image" />
