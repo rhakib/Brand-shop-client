@@ -9,3 +9,14 @@
 4. **Adding Products:** An admin of this website will be able to add products through a form in the add product page.
 5. **Updating Products:** An admin of this website can update the product information using update product form.
 
+**Technologies:**
+
+I have used the following technologies to build this website:
+- HTML 5
+- CSS 3
+- Tailwind
+- JavaScript
+- React
+- Node.js
+- Express.js
+- MongoDb
