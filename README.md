@@ -15,6 +15,7 @@ I have used the following technologies to build this website:
 - HTML 5
 - CSS 3
 - Tailwind
+- DaisyUI
 - JavaScript
 - React
 - Node.js
