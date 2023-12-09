@@ -1,5 +1,8 @@
 **Website Name:** Techify <br>
-**Website link:** https://brandshop-client.web.app/
+**Website link:** 
+**Client side repo:** https://github.com/rhakib/Brand-shop-client <br>
+**Server side repo:** https://github.com/rhakib/Brand-shop-server <br>
+**Website live link:** https://brandshop-client.web.app/
 
 **Features:**
 
